@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-primary: #1e3c3e;
+  --brand-primary-dark: #061314;
+  --brand-green: #334f20;
+  --brand-brown: #402b22;
+  --brand-brown-dark: #824b25;
+
+  --accent-gold: #9f6f3a;
+  --accent-purple: #856ca7;
+  --accent-sage: #649285;
+  --accent-cyan: #4ec4ec;
+  --accent-lavender: #bbbddd;
+
+  --prize-campus-badge-bg: #e8f0e4;
+  --prize-market-badge-bg: #eee8f2;
+  --prize-national-badge-bg: #f2ebe3;
+
+  --step-active: #1c1c1c;
+  --step-inactive: #d8d4cf;
+  --step-number-inactive: #c5c5c5;
+  --step-label-muted: #919191;
+
+  --button-primary: #2e3438;
+  --button-primary-hover: #1c1c1c;
+  --button-cta: #1a1a1a;
+
+  --text-primary: #1c1c1c;
+  --text-secondary: #7b7b7b;
+  --text-muted: #5f6664;
+  --text-subtle: #5b5e62;
+  --text-inverse: #ffffff;
+  --text-dark: #2e3438;
+  --text-charcoal: #31353a;
+
+  --background: #f8f3ee;
+  --background-alt: #f8f5f3;
+  --background-cream: #f3dfd2;
+  --background-cream-light: #f7eee2;
+  --background-cream-soft: #f3ebe1;
+  --background-green-tint: #f1f7e8;
+  --background-lavender: #eee9ed;
+  --surface: #ffffff;
+  --surface-warm: #f8f0ea;
+  --surface-peach: #f4ece4;
+  --surface-beige: #efedde;
+
+  --section-divider: #e0e0e0;
+  --prize-card-border: #b5b2b2;
+
+  --foreground: var(--text-primary);
+
+  --text-caption: 0.625rem;
+  --text-body-sm: 0.75rem;
+  --text-body: 0.875rem;
+  --text-body-lg: 1.225rem;
+  --text-heading-sm: 1.5rem;
+  --text-heading: 2.25rem;
+  --text-heading-lg: 3.75rem;
+  --text-display: 5rem;
+
+  --hero-title-size: 5rem;
+  --hero-title-leading: 1.2;
+  --hero-subtext-size: 1.25rem;
+  --hero-subtext-leading: 1.5;
+  --hero-subtext-color: #666666;
+
+  --prizes-subtext-color: #666666;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 400;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 700;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-dark: var(--brand-primary-dark);
+  --color-brand-green: var(--brand-green);
+  --color-brand-brown: var(--brand-brown);
+  --color-brand-brown-dark: var(--brand-brown-dark);
+
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-sage: var(--accent-sage);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-lavender: var(--accent-lavender);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-dark: var(--text-dark);
+  --color-text-charcoal: var(--text-charcoal);
+
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-surface-peach: var(--surface-peach);
+  --color-surface-beige: var(--surface-beige);
+
+  --font-sans: var(--font-lato);
+  --font-display: var(--font-serif);
+  --font-system: var(--font-system);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  font-family: var(--font-lato), Arial, Helvetica, sans-serif;
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

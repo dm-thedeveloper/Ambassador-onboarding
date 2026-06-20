@@ -1,0 +1,15 @@
+export const landingAssets = {
+  heroStudents: "/assets/landing/hero-students.png",
+  featuredPrizeCard: "/assets/landing/featured-prize-card.png",
+  prizeCampusIllustration: "/assets/landing/prize-campus-illustration.png",
+  prizeMarketIllustration: "/assets/landing/prize-market-illustration.png",
+  prizeNationalIllustration: "/assets/landing/prize-national-illustration.png",
+  schoolAndMarketHero: "/assets/school_and_maket/right_image.png",
+  threeWaysIcon1: "/assets/three_ways_to_win/icon_1.png",
+  threeWaysIcon2: "/assets/three_ways_to_win/icon_2.png",
+  threeWaysIcon3: "/assets/three_ways_to_win/icon_3.png",
+  threeWaysIllustration: "/assets/three_ways_to_win/Right_image.png",
+  everyoneCountsIconYourInvites: "/assets/eveyr_one_counts/icon_1.png",
+  everyoneCountsIconTheirInvites: "/assets/eveyr_one_counts/icon_2.png",
+  everyoneCountsIconPeopleReached: "/assets/eveyr_one_counts/iocn_2.png",
+} as const;
