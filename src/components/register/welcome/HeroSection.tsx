@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { FeaturedPrizeCard } from "./FeaturedPrizeCard";
-import { OnboardingHeader } from "./OnboardingHeader";
+import { OnboardingHeader } from "@/components/onboarding/OnboardingHeader";
 import { landingAssets } from "@/lib/landing-assets";
 import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 

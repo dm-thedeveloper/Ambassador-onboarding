@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { NetworkImpactEquation } from "./NetworkImpactEquation";
-import { OnboardingHeader } from "./OnboardingHeader";
+import { OnboardingHeader } from "@/components/onboarding/OnboardingHeader";
 import { impactEquationSteps } from "@/lib/landing-data";
 import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 

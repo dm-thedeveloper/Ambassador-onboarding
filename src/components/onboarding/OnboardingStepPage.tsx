@@ -1,13 +1,13 @@
 import type { ComponentType } from "react";
 import { notFound } from "next/navigation";
-import { CreateAccountSection } from "./CreateAccountSection";
-import { EveryoneCountsSection } from "./EveryoneCountsSection";
-import { HeroSection } from "./HeroSection";
-import { PrizesSection } from "./PrizesSection";
-import { SchoolAndMarketSection } from "./SchoolAndMarketSection";
+import { CreateAccountSection } from "@/components/register/account/CreateAccountSection";
+import { EveryoneCountsSection } from "@/components/register/invites/EveryoneCountsSection";
+import { ThreeWaysToWinSection } from "@/components/register/prizes/ThreeWaysToWinSection";
+import { HeroSection } from "@/components/register/welcome/HeroSection";
+import { PrizesSection } from "@/components/register/welcome/PrizesSection";
+import { SchoolAndMarketSection } from "@/components/register/your-school/SchoolAndMarketSection";
+import { YouAreInSection } from "@/components/register/youre-in/YouAreInSection";
 import { SectionDivider } from "./SectionDivider";
-import { ThreeWaysToWinSection } from "./ThreeWaysToWinSection";
-import { YouAreInSection } from "./YouAreInSection";
 
 const stepSections: Record<number, ComponentType<{ activeStep: number }>> = {
   2: SchoolAndMarketSection,

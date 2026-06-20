@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { FormField } from "@/components/ui/FormField";
-import { OnboardingHeader } from "./OnboardingHeader";
+import { OnboardingHeader } from "@/components/onboarding/OnboardingHeader";
 import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 
 type CreateAccountSectionProps = {

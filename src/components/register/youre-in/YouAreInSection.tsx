@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { AmbassadorLinkCard } from "./AmbassadorLinkCard";
-import { OnboardingHeader } from "./OnboardingHeader";
+import { OnboardingHeader } from "@/components/onboarding/OnboardingHeader";
 import { ShareYourLink } from "./ShareYourLink";
 import { ambassadorProfile } from "@/lib/landing-data";
 import { getOnboardingStepPath } from "@/lib/onboarding-routes";

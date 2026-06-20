@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { OnboardingStepPage } from "@/components/landing/OnboardingStepPage";
+import { OnboardingStepPage } from "@/components/onboarding/OnboardingStepPage";
 import {
   onboardingStepSlugs,
   parseOnboardingStepSlug,

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { OnboardingHeader } from "./OnboardingHeader";
+import { OnboardingHeader } from "@/components/onboarding/OnboardingHeader";
 import { SchoolInfoCard } from "./SchoolInfoCard";
 import { featuredSchool } from "@/lib/landing-data";
 import { landingAssets } from "@/lib/landing-assets";
