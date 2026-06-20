@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { onboardingSteps } from "@/lib/landing-data";
+import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 
 type OnboardingStepperProps = {
   activeStep?: number;
@@ -18,29 +20,37 @@ export function OnboardingStepper({ activeStep = 1, align = "start" }: Onboardin
           const isActive = step.id === activeStep;
 
           return (
-            <li key={step.id} className="flex items-center gap-1.5 sm:gap-2">
-              <span
-                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full lg:h-8 lg:w-8 ${
-                  isActive
-                    ? "bg-[var(--step-active)]"
-                    : "border border-[var(--step-inactive)] bg-transparent"
-                }`}
+            <li key={step.id}>
+              <Link
+                href={getOnboardingStepPath(step.id)}
+                aria-current={isActive ? "step" : undefined}
+                className="interactive-link flex items-center gap-1.5 rounded-md sm:gap-2"
               >
                 <span
-                  className={`text-xs font-[var(--font-weight-regular)] lg:text-sm ${
-                    isActive ? "text-[#ffffff]" : "text-[var(--step-number-inactive)]"
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full lg:h-8 lg:w-8 ${
+                    isActive
+                      ? "bg-[var(--step-active)]"
+                      : "border border-[var(--step-inactive)] bg-transparent"
                   }`}
                 >
-                  {step.id}
+                  <span
+                    className={`text-xs font-[var(--font-weight-regular)] lg:text-sm ${
+                      isActive ? "text-[#ffffff]" : "text-[var(--step-number-inactive)]"
+                    }`}
+                  >
+                    {step.id}
+                  </span>
                 </span>
-              </span>
-              <span
-                className={`whitespace-nowrap text-[0.6875rem] text-[var(--text-primary)] sm:text-[var(--text-body-sm)] ${
-                  isActive ? "font-[var(--font-weight-bold)]" : "max-lg:hidden font-[var(--font-weight-regular)]"
-                }`}
-              >
-                {step.label}
-              </span>
+                <span
+                  className={`whitespace-nowrap text-[0.6875rem] text-[var(--text-primary)] sm:text-[var(--text-body-sm)] ${
+                    isActive
+                      ? "font-[var(--font-weight-bold)]"
+                      : "font-[var(--font-weight-regular)]"
+                  }`}
+                >
+                  {step.label}
+                </span>
+              </Link>
             </li>
           );
         })}

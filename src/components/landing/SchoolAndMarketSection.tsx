@@ -4,52 +4,55 @@ import { OnboardingHeader } from "./OnboardingHeader";
 import { SchoolInfoCard } from "./SchoolInfoCard";
 import { featuredSchool } from "@/lib/landing-data";
 import { landingAssets } from "@/lib/landing-assets";
+import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 
-export function SchoolAndMarketSection() {
+type SchoolAndMarketSectionProps = {
+  activeStep?: number;
+};
+
+export function SchoolAndMarketSection({ activeStep = 2 }: SchoolAndMarketSectionProps) {
   return (
-    <section className="flex w-full flex-col overflow-hidden lg:min-h-screen">
-      <OnboardingHeader activeStep={2} />
+    <section className="step-screen">
+      <OnboardingHeader activeStep={activeStep} />
 
-      <div className="flex flex-col lg:min-h-0 lg:flex-1 lg:flex-row">
-        <div className="flex w-full min-w-0 flex-col lg:w-[45%] lg:shrink-0 lg:flex-[0_0_45%]">
-          <div className="flex flex-1 flex-col justify-center px-4 py-10 pb-10 sm:px-6 lg:px-12 lg:py-12 xl:px-16">
-            <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
-              <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
-                Step 2 of 6
-              </p>
-              <h2 className="mt-4 font-display text-[clamp(2.25rem,3.5vw,3.75rem)] font-[var(--font-weight-medium)] leading-[1.15] tracking-normal text-black">
-                Your school &amp; market
-              </h2>
-              <p className="mt-6 max-w-[28rem] font-sans text-[clamp(1.0625rem,1.25vw,1.125rem)] font-[var(--font-weight-regular)] leading-[1.55] text-[var(--hero-subtext-color)]">
-                Help represent Bea with your peers. Our interactive waitlist experience stems from
-                your invites.
-              </p>
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row lg:items-stretch">
+        <div className="flex min-h-0 flex-1 flex-col justify-center overflow-hidden px-4 py-4 sm:px-6 lg:w-[45%] lg:shrink-0 lg:flex-[0_0_45%] lg:px-12 lg:py-6 xl:px-16">
+          <div className="step-enter w-full lg:max-w-lg xl:max-w-xl">
+            <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
+              Step 2 of 6
+            </p>
+            <h2 className="step-heading mt-4">
+              Your school &amp; market
+            </h2>
+            <p className="step-lead mt-6 max-w-[28rem] lg:max-w-none">
+              Help represent Bea with your peers. Our interactive waitlist experience stems from
+              your invites.
+            </p>
 
-              <div className="mt-8">
-                <SchoolInfoCard school={featuredSchool} />
-              </div>
+            <div className="mt-5">
+              <SchoolInfoCard school={featuredSchool} />
+            </div>
 
-              <p className="mt-4 text-[var(--text-body-sm)] text-[var(--text-secondary)]">
-                {featuredSchool.marketContext}
-              </p>
+            <p className="mt-2 text-[0.6875rem] leading-snug text-[var(--text-secondary)] lg:text-[var(--text-body-sm)]">
+              {featuredSchool.marketContext}
+            </p>
 
-              <div className="mt-8 w-full">
-                <Button showArrow className="btn-cta-full">
-                  Claim my spot
-                </Button>
-              </div>
+            <div className="mt-5 w-full">
+              <Button showArrow className="btn-cta-full" href={getOnboardingStepPath(3)}>
+                Claim my spot
+              </Button>
             </div>
           </div>
         </div>
 
-        <div className="relative min-h-[22rem] w-full overflow-hidden lg:min-h-screen lg:w-[55%] lg:shrink-0 lg:flex-[0_0_55%]">
+        <div className="step-enter-media relative hidden min-h-0 overflow-hidden lg:block lg:w-[55%] lg:flex-[0_0_55%]">
           <Image
             src={landingAssets.schoolAndMarketHero}
             alt="University campus building with clock tower surrounded by autumn trees"
             fill
             priority
             className="origin-right scale-[1.35] object-cover object-right lg:scale-[1.45]"
-            sizes="(max-width: 1024px) 100vw, 55vw"
+            sizes="55vw"
           />
         </div>
       </div>

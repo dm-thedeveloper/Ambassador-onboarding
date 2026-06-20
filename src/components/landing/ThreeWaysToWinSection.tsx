@@ -4,51 +4,55 @@ import { OnboardingHeader } from "./OnboardingHeader";
 import { WinWayCard } from "./WinWayCard";
 import { winWays } from "@/lib/landing-data";
 import { landingAssets } from "@/lib/landing-assets";
+import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 
-export function ThreeWaysToWinSection() {
+type ThreeWaysToWinSectionProps = {
+  activeStep?: number;
+};
+
+export function ThreeWaysToWinSection({ activeStep = 3 }: ThreeWaysToWinSectionProps) {
   return (
-    <section className="flex w-full flex-col overflow-hidden lg:min-h-screen">
-      <OnboardingHeader activeStep={3} />
+    <section className="step-screen">
+      <OnboardingHeader activeStep={activeStep} />
 
-      <div className="flex flex-col lg:min-h-0 lg:flex-1 lg:flex-row lg:items-stretch">
-        <div className="flex w-full min-w-0 flex-col lg:w-[45%] lg:shrink-0 lg:flex-[0_0_45%]">
-          <div className="flex flex-1 flex-col justify-center px-4 py-10 pb-10 sm:px-6 lg:px-12 lg:py-12 xl:px-16">
-            <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
-              <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
-                Step 3 of 6
-              </p>
-              <h2 className="mt-3 font-sans text-[clamp(2.25rem,4vw,3.75rem)] font-[450] leading-[1.08] tracking-normal text-black">
-                <span className="block">Three ways to</span>
-                <span className="block">win</span>
-              </h2>
-              <p className="mt-7 max-w-[22rem] font-sans text-[clamp(1.0625rem,1.2vw,1.125rem)] font-[var(--font-weight-regular)] leading-[1.5] text-[var(--hero-subtext-color)]">
-                <span className="block">The competition period will last for one week.</span>
-                <span className="block">Winners will be determined by app downloads upon launch.</span>
-              </p>
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row lg:items-stretch">
+        <div className="flex min-h-0 flex-1 flex-col justify-center overflow-hidden px-4 py-4 sm:px-6 lg:w-[45%] lg:shrink-0 lg:flex-[0_0_45%] lg:justify-start lg:overflow-y-auto lg:px-12 lg:py-6 xl:px-16">
+          <div className="step-enter w-full lg:max-w-lg xl:max-w-xl">
+            <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
+              Step 3 of 6
+            </p>
+            <h2 className="step-heading mt-2">
+              <span className="block lg:hidden">Three ways to win</span>
+              <span className="hidden lg:block">Three ways to</span>
+              <span className="hidden lg:block">win</span>
+            </h2>
+            <p className="step-lead mt-3 max-w-[28rem] lg:max-w-none">
+              The competition period will last for one week. Winners will be determined by app
+              downloads upon launch.
+            </p>
 
-              <div className="mt-8 flex flex-col gap-3.5">
-                {winWays.map((way) => (
-                  <WinWayCard key={way.id} way={way} />
-                ))}
-              </div>
+            <div className="step-enter-stagger mt-5 flex flex-col gap-3.5">
+              {winWays.map((way) => (
+                <WinWayCard key={way.id} way={way} />
+              ))}
+            </div>
 
-              <div className="mt-8 w-full">
-                <Button showArrow className="btn-cta-full">
-                  Continue
-                </Button>
-              </div>
+            <div className="step-enter step-enter--continue mt-5 w-full">
+              <Button showArrow className="btn-cta-full" href={getOnboardingStepPath(4)}>
+                Continue
+              </Button>
             </div>
           </div>
         </div>
 
-        <div className="flex min-h-[22rem] w-full flex-1 items-center justify-center self-stretch bg-[var(--background)] px-4 py-10 lg:w-[55%] lg:shrink-0 lg:flex-[0_0_55%] lg:py-12">
+        <div className="step-enter-media hidden h-auto w-full shrink-0 place-items-center bg-[var(--background)] px-6 py-4 lg:grid lg:min-h-0 lg:flex-1 lg:basis-[55%] lg:shrink-0 lg:px-10 lg:py-6">
           <Image
             src={landingAssets.threeWaysIllustration}
             alt="Illustrated path from campus level to market level to national level"
             width={900}
             height={1024}
-            className="mx-auto block h-auto w-full max-w-[26rem] translate-y-4 object-contain object-center sm:max-w-[30rem] lg:max-w-[36rem] lg:translate-y-6 xl:max-w-[42rem] 2xl:max-w-[48rem]"
-            sizes="(max-width: 1024px) 95vw, 55vw"
+            className="h-auto max-h-full w-full max-w-[20rem] object-contain object-center sm:max-w-[24rem] lg:max-h-[88%] lg:max-w-[30rem] xl:max-w-[36rem] 2xl:max-w-[42rem]"
+            sizes="(max-width: 1024px) 90vw, 55vw"
           />
         </div>
       </div>

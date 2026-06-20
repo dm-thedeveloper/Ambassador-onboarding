@@ -18,23 +18,23 @@ const shareOptions: ShareOption[] = [
 export function ShareYourLink() {
   return (
     <div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <span className="h-px flex-1 bg-[var(--section-divider)]" aria-hidden="true" />
-        <span className="shrink-0 font-sans text-[0.75rem] font-[var(--font-weight-bold)] uppercase tracking-[0.14em] text-[#9a8060]">
+        <span className="shrink-0 font-sans text-[0.6875rem] font-[var(--font-weight-bold)] uppercase tracking-[0.14em] text-[#9a8060]">
           Share your link
         </span>
         <span className="h-px flex-1 bg-[var(--section-divider)]" aria-hidden="true" />
       </div>
 
-      <div className="mt-7 grid grid-cols-4 gap-2 sm:gap-4">
+      <div className="mt-4 grid grid-cols-4 gap-2">
         {shareOptions.map(({ id, label, icon: Icon }) => (
           <button
             key={id}
             type="button"
-            className="interactive-press flex min-w-0 flex-col items-center gap-2 sm:gap-3 hover:opacity-80"
+            className="interactive-press flex min-w-0 flex-col items-center gap-1.5 hover:opacity-80"
           >
-            <Icon className="h-6 w-6 text-black sm:h-7 sm:w-7 lg:h-8 lg:w-8" strokeWidth={1.5} />
-            <span className="text-center font-sans text-[0.6875rem] leading-tight text-black sm:text-[0.8125rem] lg:text-[0.875rem]">
+            <Icon className="h-5 w-5 text-black lg:h-6 lg:w-6" strokeWidth={1.5} />
+            <span className="text-center font-sans text-[0.625rem] leading-tight text-black lg:text-[0.75rem]">
               {label}
             </span>
           </button>

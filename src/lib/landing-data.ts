@@ -3,6 +3,7 @@ import { landingAssets } from "./landing-assets";
 export type OnboardingStep = {
   id: number;
   label: string;
+  slug: string;
 };
 
 export type SchoolInfo = {
@@ -35,12 +36,12 @@ export type PrizeTier = {
 };
 
 export const onboardingSteps: OnboardingStep[] = [
-  { id: 1, label: "Welcome" },
-  { id: 2, label: "Your School" },
-  { id: 3, label: "Prizes" },
-  { id: 4, label: "Account creation" },
-  { id: 5, label: "Invites" },
-  { id: 6, label: "You're In" },
+  { id: 1, label: "Welcome", slug: "welcome" },
+  { id: 2, label: "Your School", slug: "your-school" },
+  { id: 3, label: "Prizes", slug: "prizes" },
+  { id: 4, label: "Account creation", slug: "account" },
+  { id: 5, label: "Invites", slug: "invites" },
+  { id: 6, label: "You're In", slug: "youre-in" },
 ];
 
 export const featuredSchool: SchoolInfo = {

@@ -2,35 +2,42 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { FormField } from "@/components/ui/FormField";
 import { OnboardingHeader } from "./OnboardingHeader";
+import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 
-export function CreateAccountSection() {
+type CreateAccountSectionProps = {
+  activeStep?: number;
+};
+
+export function CreateAccountSection({ activeStep = 4 }: CreateAccountSectionProps) {
   return (
-    <section className="flex w-full flex-col overflow-hidden lg:min-h-screen">
-      <OnboardingHeader activeStep={4} />
+    <section className="step-screen">
+      <OnboardingHeader activeStep={activeStep} />
 
-      <div className="flex flex-1 flex-col px-4 py-10 pb-12 sm:px-6 lg:px-12 lg:py-12 xl:px-16">
-        <div className="w-full lg:w-1/2 lg:max-w-[50%]">
+      <div className="flex min-h-0 flex-1 flex-col justify-center overflow-hidden px-4 pt-4 pb-[calc(1rem+5px)] sm:px-6 lg:px-12 lg:py-6 xl:px-16">
+        <div className="step-enter w-full lg:w-1/2 lg:max-w-[50%]">
           <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
             Step 4 of 6
           </p>
-          <h2 className="mt-3 font-sans text-[clamp(2.25rem,4vw,3.75rem)] font-[450] leading-[1.08] tracking-normal text-black">
+          <h2 className="step-heading mt-2">
             Create your account
           </h2>
-          <p className="mt-6 max-w-[28rem] font-sans text-[clamp(1.0625rem,1.2vw,1.125rem)] font-[var(--font-weight-regular)] leading-[1.5] text-[var(--hero-subtext-color)] lg:max-w-none">
+          <p className="step-lead mt-3 max-w-[28rem] lg:max-w-none">
             Build your profile, track your impact, and climb the leaderboard
           </p>
 
-          <form className="mt-8 flex flex-col gap-5" noValidate>
+          <form className="mt-5 flex flex-col gap-3.5" noValidate>
             <FormField
               id="full-name"
               label="Full Name"
               placeholder="Enter your full name"
+              compact
             />
             <FormField
               id="email"
               label="Email Address"
               type="email"
               placeholder="Enter your email"
+              compact
             />
             <FormField
               id="password"
@@ -38,39 +45,40 @@ export function CreateAccountSection() {
               type="password"
               placeholder="Create your password"
               hint="Must be at least 8 characters"
+              compact
             />
 
-            <div className="w-full pt-1">
-              <Button type="submit" className="btn-cta-full">
+            <div className="w-full pt-0.5">
+              <Button className="btn-cta-full" href={getOnboardingStepPath(5)}>
                 Create account
               </Button>
             </div>
           </form>
 
-          <div className="mt-7 flex items-center gap-4">
+          <div className="mt-4 flex items-center gap-4">
             <span className="h-px flex-1 bg-[var(--section-divider)]" aria-hidden="true" />
-            <span className="shrink-0 font-sans text-[0.8125rem] text-[var(--text-secondary)]">
+            <span className="shrink-0 font-sans text-[0.75rem] text-[var(--text-secondary)]">
               or continue with
             </span>
             <span className="h-px flex-1 bg-[var(--section-divider)]" aria-hidden="true" />
           </div>
 
-          <div className="mt-5 grid grid-cols-2 gap-3">
+          <div className="mt-3 grid grid-cols-2 gap-2.5">
             <button
               type="button"
-              className="interactive-press rounded-xl border border-[var(--section-divider)] bg-white px-4 py-3 font-sans text-[0.9375rem] font-[var(--font-weight-regular)] text-black hover:bg-[var(--surface-warm)]"
+              className="interactive-press rounded-xl border border-[var(--section-divider)] bg-white px-4 py-2.5 font-sans text-[0.875rem] font-[var(--font-weight-regular)] text-black hover:bg-[var(--surface-warm)]"
             >
               Google
             </button>
             <button
               type="button"
-              className="interactive-press rounded-xl border border-[var(--section-divider)] bg-white px-4 py-3 font-sans text-[0.9375rem] font-[var(--font-weight-regular)] text-black hover:bg-[var(--surface-warm)]"
+              className="interactive-press rounded-xl border border-[var(--section-divider)] bg-white px-4 py-2.5 font-sans text-[0.875rem] font-[var(--font-weight-regular)] text-black hover:bg-[var(--surface-warm)]"
             >
               Apple
             </button>
           </div>
 
-          <p className="mt-8 font-sans text-[0.8125rem] leading-relaxed text-[var(--text-secondary)]">
+          <p className="mt-4 font-sans text-[0.75rem] leading-relaxed text-[var(--text-secondary)]">
             By creating an account, you agree to our{" "}
             <Link
               href="/terms"

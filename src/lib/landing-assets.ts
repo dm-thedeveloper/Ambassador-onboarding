@@ -1,5 +1,7 @@
 export const landingAssets = {
+  logo: "/assets/landing/logo.png",
   heroStudents: "/assets/landing/hero-students.png",
+  /** Replace the file in public/ — keep this filename, don't rename the file. */
   featuredPrizeCard: "/assets/landing/featured-prize-card.png",
   prizeCampusIllustration: "/assets/landing/prize-campus-illustration.png",
   prizeMarketIllustration: "/assets/landing/prize-market-illustration.png",

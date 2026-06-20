@@ -7,21 +7,21 @@ type WinWayCardProps = {
 
 export function WinWayCard({ way }: WinWayCardProps) {
   return (
-    <div className="flex items-center gap-4 rounded-[1.125rem] border border-[#e8e4df] bg-[#fdfaf7] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] sm:gap-5 sm:px-5 sm:py-5 lg:px-6">
-      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#f2e1d6]">
+    <div className="flex items-center gap-3 rounded-xl border border-[#e8e4df] bg-[#fdfaf7] px-4 py-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f2e1d6]">
         <Image
           src={way.icon}
           alt=""
           width={24}
           height={24}
-          className="h-6 w-6 object-contain"
+          className="h-5 w-5 object-contain"
         />
       </div>
       <div className="min-w-0">
-        <p className="font-display text-[1.25rem] font-[var(--font-weight-bold)] leading-tight text-black lg:text-[1.375rem]">
+        <p className="font-sans text-[0.875rem] font-[var(--font-weight-bold)] leading-tight text-black">
           {way.title}
         </p>
-        <p className="mt-1.5 font-sans text-[0.875rem] leading-[1.45] text-[#757575] lg:text-[0.9375rem]">
+        <p className="mt-1 font-sans text-[0.75rem] leading-snug text-[#757575]">
           {way.description}
         </p>
       </div>

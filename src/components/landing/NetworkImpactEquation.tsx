@@ -8,7 +8,7 @@ type NetworkImpactEquationProps = {
 function EquationItem({ step }: { step: ImpactEquationStep }) {
   return (
     <div className="flex min-w-[3.25rem] flex-col items-center gap-2 sm:min-w-[4.5rem] sm:gap-2.5">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white lg:h-[3.25rem] lg:w-[3.25rem]">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white lg:h-11 lg:w-11">
         <Image
           src={step.icon}
           alt=""
@@ -28,7 +28,7 @@ export function NetworkImpactEquation({ steps }: NetworkImpactEquationProps) {
   const [yourInvites, theirInvites, peopleReached] = steps;
 
   return (
-    <div className="rounded-2xl bg-[var(--background-cream-light)] px-3 py-5 sm:px-4 sm:py-6 lg:px-6 lg:py-7">
+    <div className="rounded-2xl bg-[var(--background-cream-light)] px-3 py-4 sm:px-4 sm:py-5 lg:px-5 lg:py-5">
       <div className="flex items-start justify-center gap-1.5 sm:justify-between sm:gap-4">
         <EquationItem step={yourInvites} />
         <span

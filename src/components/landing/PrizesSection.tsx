@@ -3,18 +3,18 @@ import { PrizeCard } from "./PrizeCard";
 
 export function PrizesSection() {
   return (
-    <section className="px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+    <section className="px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-sans text-[clamp(1.875rem,2.8vw,2.75rem)] font-[var(--font-weight-regular)] leading-[1.15] tracking-normal text-black">
+        <div className="step-enter step-enter--delayed mx-auto max-w-2xl px-1 text-center">
+          <h2 className="step-heading">
             Represent. Grow. Win.
           </h2>
-          <p className="mt-5 font-sans text-[clamp(1.0625rem,1.25vw,1.25rem)] font-[var(--font-weight-regular)] leading-normal text-[var(--prizes-subtext-color)]">
+          <p className="step-lead mx-auto mt-4 max-w-[20rem] sm:mt-5 sm:max-w-none">
             Prizes at the campus, market, and national level.
           </p>
         </div>
 
-        <div className="mt-14 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="step-enter-stagger step-enter-stagger--delayed mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
           {prizeTiers.map((prize) => (
             <PrizeCard key={prize.id} prize={prize} />
           ))}

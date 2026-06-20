@@ -1,37 +1,43 @@
 import { Button } from "@/components/ui/Button";
 import { AmbassadorLinkCard } from "./AmbassadorLinkCard";
+import { OnboardingHeader } from "./OnboardingHeader";
 import { ShareYourLink } from "./ShareYourLink";
 import { ambassadorProfile } from "@/lib/landing-data";
+import { getOnboardingStepPath } from "@/lib/onboarding-routes";
 
-export function YouAreInSection() {
+type YouAreInSectionProps = {
+  activeStep?: number;
+};
+
+export function YouAreInSection({ activeStep = 6 }: YouAreInSectionProps) {
   return (
-    <section className="flex w-full flex-col overflow-hidden lg:min-h-screen">
-      <div className="flex flex-1 flex-col items-center px-4 pb-12 pt-14 sm:px-6 sm:pt-16 lg:px-12 lg:pb-16 lg:pt-24 xl:pt-28">
-        <div className="w-full max-w-md lg:max-w-lg">
+    <section className="step-screen">
+      <OnboardingHeader activeStep={activeStep} />
+
+      <div className="flex min-h-0 flex-1 flex-col justify-center overflow-hidden px-4 py-4 sm:px-6 lg:px-12 lg:py-6">
+        <div className="step-enter mx-auto w-full max-w-md lg:max-w-lg">
           <div className="text-center">
-            <h2 className="font-sans text-[clamp(2.75rem,4.5vw,3.25rem)] font-[var(--font-weight-bold)] leading-[1.05] text-black">
-              You&apos;re In.
-            </h2>
-            <p className="mt-8 font-display text-[clamp(1.5rem,2.4vw,2rem)] font-[var(--font-weight-bold)] leading-tight text-black lg:mt-10">
+            <h2 className="step-heading">You&apos;re In.</h2>
+            <p className="mt-3 font-display text-[1.125rem] font-[var(--font-weight-bold)] leading-tight text-black lg:text-[1.375rem]">
               {ambassadorProfile.school}
             </p>
-            <p className="mt-3.5 text-[clamp(0.875rem,2.5vw,1.25rem)] font-[var(--font-weight-regular)] uppercase tracking-[0.14em] text-[#a67233] sm:tracking-[0.16em]">
+            <p className="mt-1.5 text-[0.75rem] font-[var(--font-weight-regular)] uppercase tracking-[0.14em] text-[#a67233]">
               Ambassador
             </p>
-            <p className="mt-2.5 font-sans text-[clamp(0.9375rem,2.2vw,1.125rem)] leading-normal text-[var(--hero-subtext-color)]">
-              Welcome to the waitlist experience.
-            </p>
+            <p className="step-lead mt-2">Welcome to the waitlist experience.</p>
           </div>
 
-          <div className="mt-14">
+          <div className="mt-5">
             <AmbassadorLinkCard link={ambassadorProfile.link} />
           </div>
 
-          <div className="mt-6 w-full">
-            <Button className="btn-cta-full">Open Dashboard</Button>
+          <div className="mt-4 w-full">
+            <Button className="btn-cta-full" href={getOnboardingStepPath(1)}>
+              Open Dashboard
+            </Button>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-4">
             <ShareYourLink />
           </div>
         </div>
