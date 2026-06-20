@@ -8,7 +8,7 @@ export function EveryoneCountsSection() {
     <section className="flex w-full flex-col overflow-hidden lg:min-h-screen">
       <OnboardingHeader activeStep={5} />
 
-      <div className="flex flex-1 flex-col px-6 py-10 pb-12 lg:px-12 lg:py-12 xl:px-16">
+      <div className="flex flex-1 flex-col px-4 py-10 pb-12 sm:px-6 lg:px-12 lg:py-12 xl:px-16">
         <div className="w-full lg:w-1/2 lg:max-w-[50%]">
           <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
             Step 5 of 6
@@ -29,8 +29,8 @@ export function EveryoneCountsSection() {
             <NetworkImpactEquation steps={impactEquationSteps} />
           </div>
 
-          <div className="mt-8">
-            <Button showArrow className="w-full min-w-0 max-w-none">
+          <div className="mt-8 w-full">
+            <Button showArrow className="btn-cta-full">
               Continue
             </Button>
           </div>

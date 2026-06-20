@@ -7,7 +7,7 @@ type PrizeCardProps = {
 
 export function PrizeCard({ prize }: PrizeCardProps) {
   return (
-    <article className="relative grid h-[26rem] grid-rows-[1fr_auto] overflow-hidden rounded-2xl border-[1.5px] border-[var(--prize-card-border)] bg-[var(--background)] px-5 pb-7 pt-14">
+    <article className="relative grid h-auto min-h-[22rem] grid-rows-[1fr_auto] overflow-hidden rounded-2xl border-[1.5px] border-[var(--prize-card-border)] bg-[var(--background)] px-4 pb-6 pt-12 sm:h-[26rem] sm:px-5 sm:pb-7 sm:pt-14">
       <span
         className={`absolute right-4 top-4 z-10 rounded-full border border-[var(--prizes-subtext-color)] px-5 py-2.5 text-sm font-[var(--font-weight-regular)] uppercase tracking-[0.06em] text-[var(--prizes-subtext-color)] ${prize.badgeClassName}`}
       >

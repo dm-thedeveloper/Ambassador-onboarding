@@ -50,6 +50,11 @@ export const featuredSchool: SchoolInfo = {
   marketContext: "One of 8 schools participating in Hartford, CT.",
 };
 
+export const ambassadorProfile = {
+  school: "University of Connecticut",
+  link: "datebea.com/link/",
+} as const;
+
 export const impactEquationSteps: ImpactEquationStep[] = [
   {
     id: "your-invites",

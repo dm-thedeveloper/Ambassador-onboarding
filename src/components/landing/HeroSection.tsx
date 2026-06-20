@@ -22,7 +22,7 @@ export function HeroSection() {
         <div className="flex min-w-0 flex-col">
           <OnboardingHeader activeStep={1} />
 
-          <div className="flex flex-1 flex-col px-6 pb-10 lg:px-12 lg:pb-0 xl:px-14">
+          <div className="flex flex-1 flex-col px-4 pb-10 sm:px-6 lg:px-12 lg:pb-0 xl:px-14">
             <div className="flex flex-1 items-center py-10 lg:py-12">
               <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-8 xl:gap-14 2xl:gap-20">
                 <div className="min-w-0 max-w-xl">
@@ -47,7 +47,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="flex justify-center px-6 pb-10 lg:hidden">
+      <div className="flex justify-center px-4 pb-10 sm:px-6 lg:hidden">
         <FeaturedPrizeCard />
       </div>
     </section>

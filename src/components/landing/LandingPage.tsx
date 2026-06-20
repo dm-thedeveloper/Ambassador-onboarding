@@ -7,6 +7,7 @@ import { PrizesSection } from "./PrizesSection";
 import { SchoolAndMarketSection } from "./SchoolAndMarketSection";
 import { SectionDivider } from "./SectionDivider";
 import { ThreeWaysToWinSection } from "./ThreeWaysToWinSection";
+import { YouAreInSection } from "./YouAreInSection";
 
 export function LandingPage() {
   return (
@@ -20,6 +21,7 @@ export function LandingPage() {
       <InviteWaitlistSection />
       <CreateAccountSection />
       <EveryoneCountsSection />
+      <YouAreInSection />
       <SectionDivider />
     </div>
   );

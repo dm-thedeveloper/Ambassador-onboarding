@@ -8,6 +8,7 @@
   --brand-brown-dark: #824b25;
 
   --accent-gold: #9f6f3a;
+  --ambassador-accent: #f28f4e;
   --accent-purple: #856ca7;
   --accent-sage: #649285;
   --accent-cyan: #4ec4ec;
@@ -72,6 +73,48 @@
   --font-weight-medium: 400;
   --font-weight-semibold: 700;
   --font-weight-bold: 700;
+}
+
+@layer base {
+  button:not(:disabled),
+  a[href] {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  input,
+  textarea {
+    transition:
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+}
+
+@layer components {
+  .interactive-press {
+    @apply cursor-pointer transition-[color,background-color,opacity,transform,box-shadow] duration-200 ease-out active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/15 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .interactive-link {
+    @apply transition-[color,opacity] duration-200 ease-out hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/15;
+  }
+
+  .btn-cta {
+    display: inline-flex;
+    width: max-content;
+    max-width: 100%;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .btn-cta.btn-cta-full {
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
+  }
 }
 
 @theme inline {

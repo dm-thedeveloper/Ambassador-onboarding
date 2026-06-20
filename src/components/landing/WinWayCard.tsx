@@ -7,7 +7,7 @@ type WinWayCardProps = {
 
 export function WinWayCard({ way }: WinWayCardProps) {
   return (
-    <div className="flex items-center gap-5 rounded-[1.125rem] border border-[#e8e4df] bg-[#fdfaf7] px-5 py-5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] lg:px-6">
+    <div className="flex items-center gap-4 rounded-[1.125rem] border border-[#e8e4df] bg-[#fdfaf7] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] sm:gap-5 sm:px-5 sm:py-5 lg:px-6">
       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#f2e1d6]">
         <Image
           src={way.icon}

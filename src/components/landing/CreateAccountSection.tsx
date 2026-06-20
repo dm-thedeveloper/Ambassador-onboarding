@@ -8,7 +8,7 @@ export function CreateAccountSection() {
     <section className="flex w-full flex-col overflow-hidden lg:min-h-screen">
       <OnboardingHeader activeStep={4} />
 
-      <div className="flex flex-1 flex-col px-6 py-10 pb-12 lg:px-12 lg:py-12 xl:px-16">
+      <div className="flex flex-1 flex-col px-4 py-10 pb-12 sm:px-6 lg:px-12 lg:py-12 xl:px-16">
         <div className="w-full lg:w-1/2 lg:max-w-[50%]">
           <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
             Step 4 of 6
@@ -40,8 +40,8 @@ export function CreateAccountSection() {
               hint="Must be at least 8 characters"
             />
 
-            <div className="pt-1">
-              <Button type="submit" className="w-full min-w-0 max-w-none">
+            <div className="w-full pt-1">
+              <Button type="submit" className="btn-cta-full">
                 Create account
               </Button>
             </div>
@@ -58,13 +58,13 @@ export function CreateAccountSection() {
           <div className="mt-5 grid grid-cols-2 gap-3">
             <button
               type="button"
-              className="rounded-xl border border-[var(--section-divider)] bg-white px-4 py-3 font-sans text-[0.9375rem] font-[var(--font-weight-regular)] text-black transition-colors hover:bg-[var(--surface-warm)]"
+              className="interactive-press rounded-xl border border-[var(--section-divider)] bg-white px-4 py-3 font-sans text-[0.9375rem] font-[var(--font-weight-regular)] text-black hover:bg-[var(--surface-warm)]"
             >
               Google
             </button>
             <button
               type="button"
-              className="rounded-xl border border-[var(--section-divider)] bg-white px-4 py-3 font-sans text-[0.9375rem] font-[var(--font-weight-regular)] text-black transition-colors hover:bg-[var(--surface-warm)]"
+              className="interactive-press rounded-xl border border-[var(--section-divider)] bg-white px-4 py-3 font-sans text-[0.9375rem] font-[var(--font-weight-regular)] text-black hover:bg-[var(--surface-warm)]"
             >
               Apple
             </button>
@@ -74,14 +74,14 @@ export function CreateAccountSection() {
             By creating an account, you agree to our{" "}
             <Link
               href="/terms"
-              className="font-[var(--font-weight-bold)] text-[var(--accent-sage)] hover:underline"
+              className="interactive-link font-[var(--font-weight-bold)] text-[var(--accent-sage)] hover:underline"
             >
               Terms of Service
             </Link>{" "}
             and{" "}
             <Link
               href="/privacy"
-              className="font-[var(--font-weight-bold)] text-[var(--accent-sage)] hover:underline"
+              className="interactive-link font-[var(--font-weight-bold)] text-[var(--accent-sage)] hover:underline"
             >
               Privacy Policy
             </Link>

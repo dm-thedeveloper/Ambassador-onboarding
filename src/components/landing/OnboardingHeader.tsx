@@ -7,13 +7,13 @@ type OnboardingHeaderProps = {
 
 export function OnboardingHeader({ activeStep = 1 }: OnboardingHeaderProps) {
   return (
-    <header className="w-full shrink-0 px-6 pt-5 lg:px-10 lg:pt-6">
+    <header className="w-full shrink-0 px-4 pt-5 sm:px-6 lg:px-10 lg:pt-6">
       <div className="flex flex-col items-end gap-4 lg:gap-5">
         <p className="text-[var(--text-body-sm)] text-[var(--text-secondary)]">
           Already an ambassador?{" "}
           <Link
             href="/login"
-            className="font-[var(--font-weight-bold)] text-[var(--text-primary)] underline-offset-4 hover:underline"
+            className="interactive-link font-[var(--font-weight-bold)] text-[var(--text-primary)] underline-offset-4 hover:underline"
           >
             Log In
           </Link>

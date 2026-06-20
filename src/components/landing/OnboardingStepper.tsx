@@ -13,24 +13,30 @@ export function OnboardingStepper({ activeStep = 1, align = "start" }: Onboardin
         align === "end" ? "flex justify-end" : "flex justify-start"
       }`}
     >
-      <ol className="flex w-max items-center gap-4 lg:gap-5 xl:gap-7">
+      <ol className="flex w-max items-center gap-2 sm:gap-4 lg:gap-5 xl:gap-7">
         {onboardingSteps.map((step) => {
           const isActive = step.id === activeStep;
 
           return (
-            <li key={step.id} className="flex items-center gap-2">
+            <li key={step.id} className="flex items-center gap-1.5 sm:gap-2">
               <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[var(--text-body-sm)] font-[var(--font-weight-regular)] ${
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full lg:h-8 lg:w-8 ${
                   isActive
-                    ? "bg-[var(--step-active)] text-[var(--text-inverse)]"
-                    : "border border-[var(--step-inactive)] bg-transparent text-[var(--step-number-inactive)]"
+                    ? "bg-[var(--step-active)]"
+                    : "border border-[var(--step-inactive)] bg-transparent"
                 }`}
               >
-                {step.id}
+                <span
+                  className={`text-xs font-[var(--font-weight-regular)] lg:text-sm ${
+                    isActive ? "text-[#ffffff]" : "text-[var(--step-number-inactive)]"
+                  }`}
+                >
+                  {step.id}
+                </span>
               </span>
               <span
-                className={`whitespace-nowrap text-[var(--text-body-sm)] text-[var(--text-primary)] ${
-                  isActive ? "font-[var(--font-weight-bold)]" : "font-[var(--font-weight-regular)]"
+                className={`whitespace-nowrap text-[0.6875rem] text-[var(--text-primary)] sm:text-[var(--text-body-sm)] ${
+                  isActive ? "font-[var(--font-weight-bold)]" : "max-lg:hidden font-[var(--font-weight-regular)]"
                 }`}
               >
                 {step.label}

@@ -6,7 +6,7 @@ type SchoolInfoCardProps = {
 
 export function SchoolInfoCard({ school }: SchoolInfoCardProps) {
   return (
-    <div className="rounded-2xl bg-white px-6 py-8 lg:px-7 lg:py-9">
+    <div className="rounded-2xl bg-white px-5 py-6 sm:px-6 sm:py-8 lg:px-7 lg:py-9">
       <p className="text-[var(--text-body-sm)] font-[var(--font-weight-bold)] uppercase tracking-[0.12em] text-[var(--accent-gold)]">
         Your school
       </p>

@@ -10,7 +10,7 @@ export function BeaLogo({ className = "", variant = "dark" }: BeaLogoProps) {
     variant === "light" ? "text-[var(--text-inverse)]" : "text-[var(--text-primary)]";
 
   return (
-    <Link href="/" className={`inline-flex items-center gap-3 ${className}`} aria-label="bea home">
+    <Link href="/" className={`interactive-link inline-flex items-center gap-3 ${className}`} aria-label="bea home">
       <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[var(--text-primary)]">
         <span className="absolute h-5 w-5 rounded-full bg-[var(--accent-cyan)] opacity-90" />
         <span className="relative h-2 w-2 rounded-full bg-[var(--surface)]" />

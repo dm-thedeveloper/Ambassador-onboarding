@@ -1,6 +1,6 @@
 export function AmbassadorsImpactSection() {
   return (
-    <section className="bg-[var(--background-cream-light)] px-6 py-3 lg:px-12 lg:py-4 xl:px-16">
+    <section className="bg-[var(--background-cream-light)] px-4 py-3 sm:px-6 lg:px-12 lg:py-4 xl:px-16">
       <div className="max-w-3xl">
         <h2 className="font-sans text-[clamp(1rem,1.15vw,1.1875rem)] font-[var(--font-weight-medium)] leading-tight text-black">
           Ambassadors creating real impact.
